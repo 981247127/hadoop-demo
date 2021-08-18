@@ -63,7 +63,6 @@ public class HadoopDistributionFileSystemTest {
 		}
 	}
 
-
 	@Test
 	public void testListFiles() throws Exception {
 		System.out.println("== 列举文件列表 ==");
