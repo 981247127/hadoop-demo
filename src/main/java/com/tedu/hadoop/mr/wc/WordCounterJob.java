@@ -1,5 +1,7 @@
 package com.tedu.hadoop.mr.wc;
 
+import com.tedu.hadoop.mr.common.ConfigurationManager;
+import com.tedu.hadoop.mr.common.HadoopDistributionFileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
@@ -11,18 +13,20 @@ import java.io.IOException;
 
 public class WordCounterJob {
 	public static void main(String[] args) throws Exception {
-		Job job = Job.getInstance();
+		HadoopDistributionFileSystem.rm("/out");
+
+		Job job = Job.getInstance(ConfigurationManager.get());
 		job.setJarByClass(WordCounterJob.class);
 
 		job.setMapperClass(WordCounterMapper.class);
 		job.setMapOutputKeyClass(Text.class);
 		job.setMapOutputValueClass(LongWritable.class);
-		FileInputFormat.setInputPaths(job, new Path("hdfs://h201.c8:8020/test/wc.txt"));
+		FileInputFormat.setInputPaths(job, new Path("/test/wc.txt"));
 
 		job.setReducerClass(WordCounterReducer.class);
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(LongWritable.class);
-		FileOutputFormat.setOutputPath(job, new Path("hdfs://h201.c8:8020/out/wc"));
+		FileOutputFormat.setOutputPath(job, new Path("/out/wc"));
 
 		job.waitForCompletion(true);
 	}
