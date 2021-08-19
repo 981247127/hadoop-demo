@@ -1,4 +1,4 @@
-package com.tedu.hadoop.mr.merge;
+package com.tedu.hadoop.mr.merge.r;
 
 import com.tedu.hadoop.mr.merge.pojo.InfoWriteable;
 import com.tedu.hadoop.mr.merge.pojo.Order;
