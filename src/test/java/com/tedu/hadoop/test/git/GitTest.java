@@ -7,6 +7,6 @@ public class GitTest {
 	public static void main(String[] args) {
 		Configuration configuration = ConfigurationManager.get();
 		System.out.println(configuration.get("fs.defaultFS"));
-		System.out.println("wrote by hot-fix");
+		System.out.println("modified by master");
 	}
 }
