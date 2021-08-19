@@ -1,6 +1,4 @@
-package com.tedu.hadoop.mr.op.pojo;
-
-import java.io.Serializable;
+package com.tedu.hadoop.mr.merge.pojo;
 
 public class Order {
 	// 下标位置：0，订单ID

@@ -1,4 +1,4 @@
-package com.tedu.hadoop.mr.op.pojo;
+package com.tedu.hadoop.mr.merge.pojo;
 
 import com.alibaba.fastjson.JSON;
 import org.apache.hadoop.io.Text;
@@ -60,7 +60,7 @@ public class InfoWriteable implements WritableComparable<InfoWriteable> {
 	public String toString() {
 		Order o = Optional.ofNullable(this.order).orElse(new Order());
 		Product p = Optional.ofNullable(this.product).orElse(new Product());
-		return String.format("%d | %s | %f | %s | %s | %d | %f",
+		return String.format("%d, %s, %f, %s, %s, %d, %f",
 				o.getId(), o.getDate(), o.getAmount(), o.getPid(), p.getName(), p.getCategoryId(), p.getPrice()
 		);
 	}

@@ -1,8 +1,8 @@
-package com.tedu.hadoop.mr.op;
+package com.tedu.hadoop.mr.merge;
 
-import com.tedu.hadoop.mr.op.pojo.InfoWriteable;
-import com.tedu.hadoop.mr.op.pojo.Order;
-import com.tedu.hadoop.mr.op.pojo.Product;
+import com.tedu.hadoop.mr.merge.pojo.InfoWriteable;
+import com.tedu.hadoop.mr.merge.pojo.Order;
+import com.tedu.hadoop.mr.merge.pojo.Product;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
@@ -10,9 +10,8 @@ import org.apache.hadoop.mapreduce.Reducer;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
-public class OPReducer extends Reducer<Text, InfoWriteable, Text, NullWritable> {
+public class MegreReducer extends Reducer<Text, InfoWriteable, Text, NullWritable> {
 	@Override
 	protected void reduce(Text key, Iterable<InfoWriteable> values, Context context) throws IOException, InterruptedException {
 		List<Order> orders = new ArrayList<>();

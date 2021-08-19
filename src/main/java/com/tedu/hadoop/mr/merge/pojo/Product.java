@@ -1,4 +1,4 @@
-package com.tedu.hadoop.mr.op.pojo;
+package com.tedu.hadoop.mr.merge.pojo;
 
 public class Product {
 	// 下标位置：0，商品ID
